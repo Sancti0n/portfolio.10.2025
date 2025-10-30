@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fr" data-version="final-v8-pdf-merged">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jérémie MAUFRET | Mon Portfolio | Développeur</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>&lt; Jérémie MAUFRET / &gt;</h1>
+        <nav>
+            <a href="#propos">About me</a>
+            <a href="#demo">Algorithmique</a>
+            <a href="#skills">Skills</a>
+            <a href="#projets">Projets</a>
+            <a href="#formation">Diplômes & études</a>
+            <a href="#passions">Passions</a>
+        </nav>
+        <div>
+            <button id="print-pdf-btn" class="toggle-btn"><i class="fa-solid fa-file-pdf"></i> Imprimer/PDF</button>
+            <button id="dark-toggle" class="toggle-btn"><i class="fa-solid fa-moon"></i> Soft Dark</button>
+            <button id="color-blind-toggle" class="toggle-btn"><i class="fa-solid fa-eye-low-vision"></i>
+                Colorblind</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="propos">
+            <h2>About me</h2>
+            <p>Développeur passionné par l'algorithmique et les mathématiques</p>
+            <p>Tout a commencé avec un robot aspirateur autonome, on devait coder un simple algorithme pour gérer le
+                maintien de la direction de cet aspirateur, c'était la première fois que j'entendais le mot
+                "algorithme", avec le temps j'ai découvert qu'on pouvait l'utiliser en mathématique, ainsi qu'en cuisine
+                mais c'est un autre sujet.
+            </p>
+            <p>
+                Avec la pratique, que ça soit sur des challenges ou sur du développement web, on s'aperçoit qu'il ne
+                suffit pas qu'un algorithme fonctionne mais qu'il soit efficace et optimisé, on finit par rechercher la
+                meilleure manière de l'écrire, on commence à s'intéresser à la complexité, si par exemple il n'y a pas
+                mieux que O(n), ou encore si on peut intégrer un peu de code golf même si on y perd en lisibilité et en
+                compréhension. Je trouve assez passionnant de regarder des benchmarks de fonctions ou de pratiques,
+                comme par exemple voir ce qui est le plus efficace entre un simple if et un ternaire.
+            </p>
+
+            <div class="contact-links-grid">
+                <a href="mailto:jeremie.maufret@laposte.net" class="contact-link email-link">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>E-mail</span>
+                </a>
+                <a href="CV_Jérémie_MAUFRET.pdf" class="contact-link cv-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    <span>Télécharger le CV</span>
+                </a>
+                <a href="https://www.linkedin.com/in/jérémie-maufret/" class="contact-link social-link" target="_blank"
+                    rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/Sancti0n" class="contact-link social-link" target="_blank"
+                    rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </section>
+
+        <section id="demo">
+            <h2 id="demo-title">Algorithmes réalisés sur Codewars</h2>
+            <p>Affichage aléatoire de solutions Codewars en Python, JavaScript, Java, PHP.</p>
+
+            <div class="code-grid-container">
+
+                <div class="code-item">
+                    <div class="code-block">
+                        <pre id="code-display-1">Chargement Python...</pre>
+                    </div>
+                    <button id="reload-demo-py-1" class="toggle-btn code-btn" data-lang="python"><i
+                            class="fa-solid fa-arrows-rotate"></i> Python</button>
+                </div>
+
+                <div class="code-item">
+                    <div class="code-block">
+                        <pre id="code-display-2">Chargement JavaScript...</pre>
+                    </div>
+                    <button id="reload-demo-js-2" class="toggle-btn code-btn" data-lang="javascript"><i
+                            class="fa-solid fa-arrows-rotate"></i> JavaScript</button>
+                </div>
+
+                <div class="code-item">
+                    <div class="code-block">
+                        <pre id="code-display-3">Chargement Java...</pre>
+                    </div>
+                    <button id="reload-demo-java-3" class="toggle-btn code-btn" data-lang="java"><i
+                            class="fa-solid fa-arrows-rotate"></i> Java</button>
+                </div>
+
+                <div class="code-item">
+                    <div class="code-block">
+                        <pre id="code-display-4">Chargement PHP...</pre>
+                    </div>
+                    <button id="reload-demo-php-4" class="toggle-btn code-btn" data-lang="php"><i
+                            class="fa-solid fa-arrows-rotate"></i> PHP</button>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+
+            <p>J'ai travaillé mes compétences sur différents domaines :</p>
+            <div class="algo-badges">
+                <span class="badge">Algorithmes</span>
+                <span class="badge">Algèbre</span>
+                <span class="badge">Art ASCII</span>
+                <span class="badge">Base de données / SQL</span>
+                <span class="badge">Big Integers</span>
+                <span class="badge">Binaire</span>
+                <span class="badge">Combinatoire</span>
+                <span class="badge">Contraintes</span>
+                <span class="badge">Cryptographie</span>
+                <span class="badge">Data Science</span>
+                <span class="badge">Date Time</span>
+                <span class="badge">Débogage</span>
+                <span class="badge">Expression régulière</span>
+                <span class="badge">Fondamentaux</span>
+                <span class="badge">Games (Logique)</span>
+                <span class="badge">Géométrie</span>
+                <span class="badge">Manipulation de listes/tableaux</span>
+                <span class="badge">Manipulation de strings</span>
+                <span class="badge">Mathématiques</span>
+                <span class="badge">Matrice</span>
+                <span class="badge">Parsing</span>
+                <span class="badge">Performance & Optimisation</span>
+                <span class="badge">Programmation Orientée Objet (POO)</span>
+                <span class="badge">Puzzles</span>
+                <span class="badge">Recursion</span>
+                <span class="badge">Réseau</span>
+                <span class="badge">Structure de données</span>
+                <span class="badge">Tri</span>
+                <span class="badge">Tutoriaux</span>
+            </div>
+
+            <div class="grid-container">
+                <div class="grid-item">
+                    <h3>Codewars</h3>
+
+                    <p class="text" id="api_codewars"></p>
+
+                    <div class="link-group-spacing">
+                        <a class="contact-link cv-link" href="https://www.codewars.com/users/Sancti0n">Lien</a>
+                        <a class="contact-link cv-link"
+                            href="https://www.codewars.com/api/v1/users/Sancti0n/code-challenges/completed?page=0">API</a>
+                        <a class="contact-link cv-link"
+                            href="https://github.com/Sancti0n/codewars_katas_solutions">GitHub</a>
+                    </div>
+
+                    <img src="https://www.codewars.com/users/Sancti0n/badges/large" alt="Niveau Codewars"
+                        class="codewars-badge" />
+                </div>
+                <div class="grid-item">
+                    <h3>freeCodeCamp</h3>
+                    <a class="contact-link cv-link"
+                        href="https://www.freecodecamp.org/fcc7f604b88-9a6b-4009-b621-da6f433437e4">Lien</a>
+                    <h3>CodinGame</h3>
+                    <a class="contact-link cv-link" href="https://github.com/Sancti0n/CodinGame-Algorithms">GitHub</a>
+                    <a class="contact-link cv-link"
+                        href="https://www.codingame.com/profile/3ab4b36cea760037b9abb767cc73fde15448893">Lien</a>
+                    <p class="text">
+                        Niveau Argent, langages : <i class="fa-brands fa-js"></i> JavaScript, <i
+                            class="fa-brands fa-python"></i> Python, <i class="fa-brands fa-java"></i> Java, <i
+                            class="fa-brands fa-php"></i> PHP
+                    </p>
+
+                    <h3>BattleDev</h3>
+                    <a class="contact-link cv-link" href="https://github.com/Sancti0n/BattleDevAlgo">GitHub</a>
+                    <p class="text">
+                        Les algorithmes que j'ai utilisé sur les épreuves de la BattleDev.
+                    </p>
+                    <p class="text">
+                        Juin 2021 - Classement 1712 sur 3184
+                    </p>
+
+                    <h3>Advent of Code<h3>
+                            <a class="contact-link cv-link" href="https://github.com/Sancti0n/advent-of-code">GitHub</a>
+                            </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projets">
+            <h2>Projets</h2>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <h3>[ Equivalences in languages ]</h3>
+                    <p>Je me suis intéressé à l'équivalence dans les langages, je cherche des manières de résoudre une
+                        problématique mais en plusieurs langages, Python, JavaScript, PHP et Java</p>
+                    <p>Technologies: <i class="fa-brands fa-python"></i> Python, <i class="fa-brands fa-js"></i>
+                        JavaScript, <i class="fa-brands fa-php"></i> PHP, <i class="fa-brands fa-java"></i> Java.</p>
+                    <a class="contact-link cv-link"
+                        href="https://github.com/Sancti0n/equivalence-in-languages">GitHub</a>
+                </div>
+                <div class="grid-item">
+                    <h3>[ Api Rest Book ]</h3>
+                    <p>Gestion de livres, découverte de Symfony 6.3, API REST, UUID.</p>
+                    <p>Technologies: <i class="fa-brands fa-php"></i> PHP, <i class="fa-brands fa-symfony"></i> Symfony
+                        6.3, <i class="fa-solid fa-database"></i> MySQL, <i class="fa-solid fa-database"></i>
+                        PostgreSQL, UUID.</p>
+                    <a class="contact-link cv-link" href="https://github.com/Sancti0n/symfony_api_rest_books">GitHub</a>
+                </div>
+                <div class="grid-item">
+                    <h3>[ Symanga ]</h3>
+                    <p>Une bibliothèque de livres, ou plus précisément des mangas, les administrateurs et super
+                        administrateurs peuvent rajouter des livres. Les membres peuvent rajouter les livres disponibles
+                        à leur profil. Comme aide, les administrateurs disposent d'un accès à une api de livres, pour
+                        les aider à remplir les formulaires d'ajouts. </p>
+                    <p>Technologies: CRUD, <i class="fa-brands fa-html5"></i> HTML5, <i
+                            class="fa-brands fa-css3-alt"></i> CSS3, Bootstrap, <i class="fa-brands fa-js"></i>
+                        Javascript, jQuery, Ajax, api côté client, <i class="fa-brands fa-php"></i> PHP,
+                        programmation orientée objet, <i class="fa-brands fa-symfony"></i> Symfony 4, <i
+                            class="fa-solid fa-database"></i> SQL, architecture MVC, Composer.</p>
+                    <a class="contact-link cv-link" href="https://projet5.maufret-jeremie.ovh/">Lien</a>
+                    <a class="contact-link cv-link" href="https://github.com/Sancti0n/mangabdd">GitHub</a>
+                </div>
+                <div class="grid-item">
+                    <h3>[ Disquaire ]</h3>
+                    <p>Gestion de disques pour un disquaire.</p>
+                    <p>Technologies: CRUD, <i class="fa-brands fa-python"></i> Python, Django, <i
+                            class="fa-solid fa-database"></i> PostgreSQL.</p>
+                    <a class="contact-link cv-link" href="https://github.com/Sancti0n/disquaire_project">GitHub</a>
+                </div>
+                <div class="grid-item">
+                    <h3>[ Parsing Books ]</h3>
+                    <p>Quelques scripts permettant de faire du parsing et de récupérer des informations sur des livres
+                        selon des éditeurs.</p>
+                    <p>Technologies: <i class="fa-brands fa-python"></i> Python, Beautiful Soup.</p>
+                    <a class="contact-link cv-link" href="https://github.com/Sancti0n/python_parsing_books">GitHub</a>
+                </div>
+                <div class="grid-item">
+                    <h3>[ Web Agency ]</h3>
+                    <p>Création d'un site pour une agence web, une seule page d'accueil.</p>
+                    <p>Technologies: <i class="fa-brands fa-html5"></i> HTML5, <i class="fa-brands fa-css3-alt"></i>
+                        CSS3, responsif.</p>
+                    <a class="contact-link cv-link" href="https://maufret-jeremie.ovh/webagency/">Lien</a>
+                    <a class="contact-link cv-link" href="https://github.com/Sancti0n/webagency">GitHub</a>
+                </div>
+                <div class="grid-item">
+                    <h3>[ Office de tourisme de Strasbourg ]</h3>
+                    <p>CMS sur un office de tourisme, gestion des événements. </p>
+                    <p>Technologies: CMS, Wordpress, AChecker.</p>
+                    <a class="contact-link cv-link" href="https://maufret-jeremie.ovh/wordpress/">Lien</a>
+                </div>
+                <div class="grid-item">
+                    <h3>[ Location de vélos ]</h3>
+                    <p>Gestion de location de vélos, utilisation d'une api côté client gérant des stations de vélos. Le
+                        client doit saisir un nom et prénom, il a ensuite 20 minutes pour récupérer ce vélo.</p>
+                    <p>Technologies: API, <i class="fa-brands fa-html5"></i> HTML5, <i
+                            class="fa-brands fa-css3-alt"></i> CSS3, <i class="fa-brands fa-js"></i> JavaScript, jQuery,
+                        programmation orientée objet, Ajax,
+                        responsif.</p>
+                    <a class="contact-link cv-link" href="https://maufret-jeremie.ovh/apivelo/">Lien</a>
+                    <a class="contact-link cv-link" href="https://github.com/Sancti0n/apiVelo">GitHub</a>
+                </div>
+                <div class="grid-item">
+                    <h3>[ Blog Forteroche ]</h3>
+                    <p>Site web pour écrivain, blog.</p>
+                    <p>Technologies: <i class="fa-brands fa-html5"></i> HTML5, <i class="fa-brands fa-css3-alt"></i>
+                        CSS3, <i class="fa-brands fa-js"></i> Javascript, <i class="fa-brands fa-php"></i> PHP,
+                        programmation orientée objet, <i class="fa-solid fa-database"></i> SQL, architecture MVC,
+                        CRUD</p>
+                    <a class="contact-link cv-link" href="https://maufret-jeremie.ovh/blogForteroche/public/">Lien</a>
+                    <a class="contact-link cv-link" href="https://github.com/Sancti0n/blogForteroche">GitHub</a>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="formation">
+            <h2>Diplômes & études</h2>
+            <div class="grid-container">
+                <div class="grid-item grid-item--half">
+                    <h3>OpenClassrooms</h3>
+                    <p>Août 2018 - Avril 2019 : Développeur Web - Bac+2 / RNCP niveau 5</p>
+                    <p>Réalisation de 5 projets :
+                    <ul>
+                        <li>Single page d'une agence web, <i class="fa-brands fa-html5"></i> HTML5, <i
+                                class="fa-brands fa-css3-alt"></i> CSS3, responsif.</li>
+                        <li>Un wordpress, création d'un office de tourisme.</li>
+                        <li> Gestion d'emprunt de vélo, <i class="fa-brands fa-html5"></i> HTML5,<i
+                                class="fa-brands fa-css3-alt"></i> CSS3, <i class="fa-brands fa-js"></i>
+                            JavaScript, API, responsif.</li>
+                        <li>Blog pour un écrivain, <i class="fa-brands fa-html5"></i>
+                            HTML5, <i class="fa-brands fa-css3-alt"></i> CSS3,<i class="fa-brands fa-php"></i> PHP, POO,
+                            <i class="fa-brands fa-js"></i> JavaScript, responsif.
+                        </li>
+                        <li>Gestion de collection de livres, <i class="fa-brands fa-html5"></i> HTML5, <i
+                                class="fa-brands fa-css3-alt"></i> CSS3, <i class="fa-brands fa-php"></i> PHP,<i
+                                class="fa-brands fa-symfony"></i> Symfony, CRUD, <i class="fa-brands fa-js"></i>
+                            JavaScript, API, MVC</li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="grid-item grid-item--half">
+                    <h3>Université</h3>
+                    <p>2013 - 2015 : Bac +2 (équivalence) Mathématiques, algèbre, analyse, géométrie</p>
+                    <p>2011 - 2013 : Bac +2 (équivalence) Informatique, langage C, <i class="fa-brands fa-php"></i> PHP,
+                        <i class="fa-brands fa-js"></i> JavaScript, <i class="fa-solid fa-database"></i> SQL, langage
+                        Scheme,
+                        hardware
+                    </p>
+                    <p>2010 - 2011 : Bac +1 Astrophysique, étude des sols, des planètes, des astres</p>
+                    <p>2009 : Bac STI Génie Électronique</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="passions">
+            <h2>Passions</h2>
+            <p>J'ai quelques passions en dehors de mes activités de développeur. Voici les principales :</p>
+            <ul>
+                <li><i class="fa-solid fa-book-open"></i> <strong>Collection de Mangas & Livres :</strong> Près de 4000
+                    volumes, englobant la tranche de vie, la science-fiction, la fantasy et les récits de psychologie.
+                </li>
+                <li><i class="fa-solid fa-gem"></i> <strong>Collection de Cartes :</strong> Principalement les cartes
+                    Pokémon, pour le côté nostalgique.
+                </li>
+                <li><i class="fa-solid fa-magnifying-glass-location"></i> <strong>Chasse à l'objet convoité :</strong>
+                    Quête et chine d'objets rares ou désirés via des boutiques physiques, en ligne ou des vide-greniers.
+                </li>
+                <li><i class="fa-solid fa-robot"></i> <strong>Constructions :</strong> Assemblage de kits (Gundam) et de
+                    Lego.</li>
+                <li><i class="fa-solid fa-gamepad"></i> <strong>Jeux Vidéos :</strong> Intérêt pour une grande variété
+                    de genres. J'apprécie particulièrement la gestion (Civilization), la narration (The Witcher), la
+                    nostalgie (vieux jeux Pokémon), et les casse-têtes (Portal).</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>console.log("Connected. 2025. [Jérémie MAUFRET].");</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+
+    </script>
+
+    <div id="scroll-to-top-bottom">
+        <button id="scroll-to-top-btn" class="toggle-btn" title="Remonter en haut"><i
+                class="fa-solid fa-arrow-up"></i></button>
+        <button id="scroll-to-bottom-btn" class="toggle-btn" title="Aller en bas"><i
+                class="fa-solid fa-arrow-down"></i></button>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,689 @@
+/* ----------------------------------------------------
+         * CSS - THÈMES ET VARIABLES
+         * ----------------------------------------------------
+         */
+
+/* Variables CSS (Thème CLAIR Inspiré GitHub) */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #24292e;
+    --primary-color: #2ea44f;
+    /* Vert principal */
+    --secondary-bg: #f6f8fa;
+    --shadow-color: rgba(27, 31, 35, 0.08);
+    --border-color: #e1e4e8;
+    --header-bg: #24292e;
+    --header-text: #ffffff;
+    --font-code: 'Fira Code', monospace;
+    /* Titres : Bleu foncé pour le contraste */
+    --heading-color: #0366d6;
+}
+
+/* Thème SOMBRE DOUX */
+body.soft-dark {
+    --bg-color: #2d333b;
+    --text-color: #adbac7;
+    --primary-color: #79c0ff;
+    --secondary-bg: #22272e;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    --border-color: #444c56;
+    --header-bg: #2d333b;
+    --header-text: #adbac7;
+    --heading-color: var(--primary-color);
+}
+
+/* Thème DALTONIEN */
+body.color-blind-mode {
+    --bg-color: #333333;
+    --text-color: #ffff00;
+    --primary-color: #00cccc;
+    --secondary-bg: #444444;
+    --shadow-color: rgba(0, 204, 204, 0.3);
+    --border-color: #555555;
+    --header-bg: #444444;
+    --header-text: #ffff00;
+    --heading-color: var(--primary-color);
+}
+
+/* ----------------------------------------------------
+         * BASE & TYPOGRAPHIE
+         * ----------------------------------------------------
+         */
+body {
+    font-family: var(--font-code);
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.4s, color 0.4s;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+main {
+    padding-top: 0;
+}
+
+section {
+    padding: 50px 5%;
+    border-bottom: 1px solid var(--border-color);
+    scroll-margin-top: 80px;
+}
+
+main section:first-of-type {
+    padding-top: 110px;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--heading-color);
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li:before {
+    content: "";
+}
+
+/* ----------------------------------------------------
+         * HEADER & NAVIGATION (STICKY)
+         * ----------------------------------------------------
+         */
+header {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 10px 5%;
+    box-shadow: 0 1px 0 var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    color: var(--header-text);
+    font-size: 1.2em;
+    margin: 0;
+}
+
+nav a {
+    color: var(--header-text);
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* ----------------------------------------------------
+         * BOUTONS GÉNÉRAUX (THÈME, CODE, PDF)
+         * ----------------------------------------------------
+         */
+.toggle-btn {
+    padding: 8px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: var(--secondary-bg);
+    color: var(--text-color);
+    font-weight: 700;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-btn:hover {
+    background-color: var(--border-color);
+    border-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+header .toggle-btn {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    border-color: var(--header-text);
+    margin-left: 10px;
+}
+
+header .toggle-btn:hover {
+    background-color: var(--header-text);
+    color: var(--header-bg);
+    border-color: var(--header-text);
+}
+
+/* Style spécifique pour le bouton PDF dans le header */
+#print-pdf-btn {
+    background-color: var(--primary-color);
+    color: var(--header-text);
+    border-color: var(--primary-color);
+}
+
+#print-pdf-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--header-text);
+    filter: brightness(1.2);
+}
+
+body.soft-dark #print-pdf-btn {
+    color: #24292e;
+}
+
+body.soft-dark #print-pdf-btn:hover {
+    color: #24292e;
+}
+
+.toggle-btn i {
+    margin-right: 5px;
+}
+
+/* Styles spécifiques aux boutons de code */
+.code-item .toggle-btn {
+    margin-top: 10px;
+    width: 100%;
+    margin-left: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* ----------------------------------------------------
+         * SECTIONS GÉNÉRALES (GRID)
+         * ----------------------------------------------------
+         */
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.grid-item {
+    flex: 1 1 calc(33% - 20px);
+    background-color: var(--secondary-bg);
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-shadow: 0 1px 3px var(--shadow-color);
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.grid-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px var(--shadow-color);
+    border-color: var(--primary-color);
+}
+
+.grid-item--half {
+    flex: 1 1 45%;
+}
+
+/* ----------------------------------------------------
+         * LIENS DE CONTACT (ABOUT ME & GRILLE)
+         * ----------------------------------------------------
+         */
+.contact-links-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.contact-link {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: 700;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.grid-item .contact-link {
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.contact-link i {
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
+/* Liens secondaires (Email, Social) */
+.email-link,
+.social-link {
+    background-color: var(--secondary-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.email-link:hover,
+.social-link:hover {
+    background-color: var(--primary-color);
+    color: var(--header-text);
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.cv-link {
+    background-color: var(--primary-color);
+    color: var(--header-text);
+    border: 1px solid var(--primary-color);
+}
+
+body.soft-dark .cv-link {
+    color: #24292e;
+}
+
+.cv-link:hover {
+    background-color: var(--primary-color);
+    filter: brightness(1.2);
+    color: var(--header-text);
+}
+
+body.soft-dark .contact-link:hover {
+    color: #24292e;
+}
+
+/* ----------------------------------------------------
+         * MISE EN AVANT ALGORITHMIQUE (BADGES)
+         * ----------------------------------------------------
+         */
+.algo-badges {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 1em;
+    font-weight: 700;
+    text-transform: none;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.badge:hover {
+    background-color: var(--secondary-bg);
+    border-color: var(--primary-color);
+}
+
+/* ----------------------------------------------------
+         * STYLES GRILLE DE CODE
+         * ----------------------------------------------------
+         */
+.code-grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch;
+    margin-top: 30px;
+}
+
+.code-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.code-block {
+    background-color: var(--header-bg);
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: 0.9em;
+    border: 1px solid var(--border-color);
+    margin-top: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    min-height: 250px;
+    height: auto;
+    flex-grow: 1;
+}
+
+.code-block pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: var(--font-code);
+    color: var(--header-text);
+}
+
+.code-block code {
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+/* ----------------------------------------------------
+         * NAVIGATION RAPIDE (Scroll-to-Top/Bottom)
+         * ----------------------------------------------------
+         */
+#scroll-to-top-bottom {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1001;
+}
+
+#scroll-to-top-bottom button {
+    padding: 10px 12px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--header-text);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
+}
+
+body.soft-dark #scroll-to-top-bottom button {
+    color: #24292e;
+}
+
+
+#scroll-to-top-bottom button i {
+    margin-right: 0;
+}
+
+#scroll-to-top-bottom button:hover {
+    transform: scale(1.1);
+    background-color: var(--text-color);
+    border-color: var(--text-color);
+}
+
+.show-scroll-btn {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.link-group-spacing {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.codewars-badge {
+    width: 75%;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* ----------------------------------------------------
+         * FOOTER
+         * ----------------------------------------------------
+         */
+footer {
+    text-align: center;
+    padding: 20px 5%;
+    background-color: var(--secondary-bg);
+    color: var(--text-color);
+    border-top: 1px solid var(--border-color);
+}
+
+/* ----------------------------------------------------
+         * COULEURS D'ICÔNES DE LANGAGE
+         * ----------------------------------------------------
+         */
+.grid-item i.fa-brands,
+.grid-item i.fa-solid {
+    margin-right: 0;
+    transition: color 0.3s;
+}
+
+.grid-item ul li i,
+#passions ul li i {
+    margin-right: 5px;
+    width: 15px;
+    text-align: center;
+}
+
+
+.fa-html5 {
+    color: #E44D26;
+}
+
+.fa-css3-alt {
+    color: #264de4;
+}
+
+.fa-js {
+    color: #f0db4f;
+}
+
+.fa-python {
+    color: #306998;
+}
+
+.fa-php {
+    color: #787cb5;
+}
+
+.fa-java {
+    color: #5382a1;
+}
+
+.fa-database {
+    color: #00758F;
+}
+
+.fa-symfony {
+    color: #000000;
+}
+
+body.soft-dark .fa-js {
+    color: #ffd400;
+}
+
+body.soft-dark .fa-symfony {
+    color: #adbac7;
+}
+
+/* ----------------------------------------------------
+         * RESPONSIVITÉ
+         * ----------------------------------------------------
+         */
+@media (max-width: 1200px) {
+
+    /* De 1200px à 600px, on passe à 2 colonnes pour le code */
+    .code-grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .grid-item {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 600px) {
+
+    /* En dessous de 600px, on passe à 1 colonne */
+    .code-grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-item {
+        flex: 1 1 100%;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 15px 5%;
+    }
+
+    nav {
+        margin-top: 15px;
+    }
+
+    header>div {
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    nav a,
+    .toggle-btn {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    /* Pour les liens de contact */
+    .contact-links-grid {
+        flex-direction: column;
+    }
+}
+
+/* ----------------------------------------------------
+         * STYLES D'IMPRESSION (PDF)
+         * ----------------------------------------------------
+         */
+@media print {
+
+    /* --- FORCE LIGHT THEME --- */
+    body,
+    body.soft-dark,
+    body.color-blind-mode {
+        --bg-color: #ffffff !important;
+        --text-color: #000000 !important;
+        --secondary-bg: #f0f0f0 !important;
+        --heading-color: #0366d6 !important;
+        --border-color: #cccccc !important;
+        background-color: #ffffff !important;
+        color: #000000 !important;
+    }
+
+    /* --- HIDE UI ELEMENTS --- */
+    header,
+    #scroll-to-top-bottom,
+    .toggle-btn,
+    .code-btn,
+    .codewars-badge,
+    footer {
+        display: none !important;
+    }
+
+    /* --- REFORMAT CONTENT --- */
+    main {
+        padding-top: 0 !important;
+    }
+
+    section {
+        padding: 10px 0 !important;
+        margin: 20px 0;
+        border: none !important;
+        /* Disable scroll margin */
+        scroll-margin-top: 0 !important;
+    }
+
+    main section:first-of-type {
+        padding-top: 0 !important;
+    }
+
+    .grid-container {
+        display: block;
+        gap: 0;
+        margin-top: 5px;
+    }
+
+    .grid-item {
+        background-color: var(--secondary-bg) !important;
+        box-shadow: none !important;
+        border: 1px solid var(--border-color) !important;
+        page-break-inside: avoid;
+        margin-bottom: 10px;
+        flex: none;
+    }
+
+    .grid-item--half {
+        flex: none;
+    }
+
+    .code-grid-container {
+        display: block;
+    }
+
+    .code-item {
+        margin-bottom: 15px;
+    }
+
+    .contact-link {
+        background-color: transparent !important;
+        color: #000000 !important;
+        border: 1px solid #000000 !important;
+        box-shadow: none !important;
+        padding: 4px 8px;
+    }
+
+    .cv-link {
+        background-color: var(--secondary-bg) !important;
+    }
+
+    .code-block {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        border: 1px dashed #cccccc !important;
+        box-shadow: none !important;
+        min-height: auto !important;
+    }
+
+    .code-block pre,
+    .code-block code {
+        color: #000000 !important;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+
+    i.fa-solid,
+    i.fa-brands {
+        color: #000000 !important;
+    }
+}
