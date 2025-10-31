@@ -1,6 +1,6 @@
 /**
-         * Convertit les caractères HTML spéciaux (<, >) en entités HTML (&lt;, &gt;).
-         */
+ * * Convertit les caractères HTML spéciaux (<, >) en entités HTML (&lt;, &gt;).
+* */
 const htmlEscape = (str) => {
     if (str === null || str === undefined) return '';
     return String(str)
@@ -255,6 +255,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // Récupération sur l'API de Codewars
+    const file = "https://www.codewars.com/api/v1/users/Sancti0n"
+    fetch(file)
+        .then(x => x.json())
+        .then(y =>
+            document.getElementById("api_codewars").innerHTML = "Python : " +
+            y.ranks.languages.python.name + "<br>JavaScript : " +
+            y.ranks.languages.javascript.name + "<br>PHP : " +
+            y.ranks.languages.php.name + "<br>Java : " +
+            y.ranks.languages.java.name + "<br>" +
+            y.codeChallenges.totalCompleted + " algorithmes terminés"
+        );
+
     // --- ÉVÉNEMENTS ET CHARGEMENT INITIAL ---
     // 1. Chargement initial des 4 cadres dans l'ordre: Python, JS, Java, PHP
     CODE_IDS.forEach((id, index) => {
@@ -272,16 +285,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
-// Récupération sur l'API de Codewars
-let file = "https://www.codewars.com/api/v1/users/Sancti0n"
-fetch(file)
-    .then(x => x.json())
-    .then(y =>
-        document.getElementById("api_codewars").innerHTML = "Python : " +
-        y.ranks.languages.python.name + "<br>JavaScript : " +
-        y.ranks.languages.javascript.name + "<br>PHP : " +
-        y.ranks.languages.php.name + "<br>Java : " +
-        y.ranks.languages.java.name + "<br>" +
-        y.codeChallenges.totalCompleted + " algorithmes terminés"
-    );
