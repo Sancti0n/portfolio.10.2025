@@ -255,6 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    /*
     // Récupération sur l'API de Codewars
     const file = "https://www.codewars.com/api/v1/users/Sancti0n"
     fetch(file)
@@ -267,6 +268,76 @@ document.addEventListener('DOMContentLoaded', () => {
             y.ranks.languages.java.name + "<br>" +
             y.codeChallenges.totalCompleted + " algorithmes terminés"
         );
+    */
+
+    let dict = {}
+    let urlRanks = "https://www.codewars.com/api/v1/users/Sancti0n";
+    var totalItems = 0;
+    async function afficheRanks() {
+        const reponse = await fetch(urlRanks);
+        const ranks = await reponse.json();
+        totalItems = ranks.codeChallenges.totalCompleted;
+        for (let a in ranks.ranks.languages) {
+            dict[a] = { "rank": ranks.ranks.languages[a].name, "number": 0 };
+        }
+    }
+    afficheRanks();
+
+    let url = "https://www.codewars.com/api/v1/users/Sancti0n/code-challenges/completed";
+    async function afficherKatas() {
+        let nbPages = (await (await fetch(url)).json()).totalPages;
+        let d = {}, c = 0;
+        for (let k = 0; k < nbPages; k++) {
+            const reponse = await fetch(url + "?page=" + k.toString());
+            const films = await reponse.json();
+
+            for (let i = 0; i < films.data.length; i++) {
+                for (let j = 0; j < films.data[i].completedLanguages.length; j++) {
+                    if (films.data[i].completedLanguages[j] in d) d[films.data[i].completedLanguages[j]] += 1;
+                    else d[films.data[i].completedLanguages[j]] = 1;
+                }
+                c++;
+            }
+        }
+
+        for (a in dict) {
+            //console.log(a, dict[a], d[a])
+            dict[a]["number"] = d[a];
+        }
+        /*
+        console.log("TEST FUSION")
+        console.log(dict)
+        console.log(totalItems)
+        console.log(c)
+        */
+        let sortedObject = Object.fromEntries(
+            Object.entries(dict).sort(([, a], [, b]) => b.number - a.number)
+        );
+        let sumValues = 0;
+        for (let key in dict) {
+            sumValues += dict[key]["number"];
+        }
+
+        for (const p in sortedObject) {
+            document.getElementById("test_api").innerHTML +=
+                `<tr>
+                    <td>${p}</td>
+                    <td>${sortedObject[p]["rank"]}</td>
+                    <td>${sortedObject[p]["number"]}</td>
+                </tr>`
+        }
+        document.getElementById("foot_api").innerHTML +=
+            `<tr>
+            <th scope="row" colspan="2">Nombre d'algorithmes cumulés</th>
+                <td>${sumValues}</td>
+            </tr>
+            <tr>
+            <th scope="row" colspan="2">Nombre d'algorithmes uniques</th>
+                <td>${totalItems}</td>
+            </tr>`
+    }
+    // https://hashnode.com/post/build-a-simple-pie-chart-with-html-and-css-ckscytmme04qnt2s1fq649khl
+    afficherKatas();
 
     // --- ÉVÉNEMENTS ET CHARGEMENT INITIAL ---
     // 1. Chargement initial des 4 cadres dans l'ordre: Python, JS, Java, PHP

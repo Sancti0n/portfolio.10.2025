@@ -687,3 +687,36 @@ body.soft-dark .fa-symfony {
         color: #000000 !important;
     }
 }
+
+table {
+    border-collapse: collapse;
+    border: 2px solid rgb(140 140 140);
+    font-family: var(--font-code);
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+thead,
+tfoot {
+    color: var(--heading-color);
+}
+
+tbody {
+    background-color: #e4f0f5;
+    color: #000000;
+}
+
+th,
+td {
+    border: 1px solid rgb(160 160 160);
+    padding: 8px 10px;
+    text-align: center;
+}
+
+tfoot th {
+    text-align: right;
+}
+
+tfoot td {
+    font-weight: bold;
+}
