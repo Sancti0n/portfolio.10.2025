@@ -1,21 +1,17 @@
 /* ----------------------------------------------------
-         * CSS - THÈMES ET VARIABLES
-         * ----------------------------------------------------
-         */
+ * 1. THÈMES ET VARIABLES
+ * ---------------------------------------------------- */
 
-/* Variables CSS (Thème CLAIR Inspiré GitHub) */
 :root {
     --bg-color: #ffffff;
     --text-color: #24292e;
     --primary-color: #2ea44f;
-    /* Vert principal */
     --secondary-bg: #f6f8fa;
     --shadow-color: rgba(27, 31, 35, 0.08);
     --border-color: #e1e4e8;
     --header-bg: #24292e;
     --header-text: #ffffff;
     --font-code: 'Fira Code', monospace;
-    /* Titres : Bleu foncé pour le contraste */
     --heading-color: #0366d6;
 }
 
@@ -32,6 +28,15 @@ body.soft-dark {
     --heading-color: var(--primary-color);
 }
 
+/* Correction contraste Soft Dark : Texte noir sur boutons accents */
+body.soft-dark #print-pdf-btn,
+body.soft-dark #print-pdf-btn:hover,
+body.soft-dark .cv-link,
+body.soft-dark .contact-link:hover,
+body.soft-dark #scroll-to-top-bottom button {
+    color: #24292e !important;
+}
+
 /* Thème DALTONIEN */
 body.color-blind-mode {
     --bg-color: #333333;
@@ -46,9 +51,8 @@ body.color-blind-mode {
 }
 
 /* ----------------------------------------------------
-         * BASE & TYPOGRAPHIE
-         * ----------------------------------------------------
-         */
+ * 2. BASE & TYPOGRAPHIE
+ * ---------------------------------------------------- */
 body {
     font-family: var(--font-code);
     margin: 0;
@@ -58,10 +62,6 @@ body {
     transition: background-color 0.4s, color 0.4s;
     line-height: 1.6;
     overflow-x: hidden;
-}
-
-main {
-    padding-top: 0;
 }
 
 section {
@@ -82,7 +82,6 @@ h1,
 h2,
 h3 {
     color: var(--heading-color);
-    font-size: 1.8em;
     font-weight: 700;
     margin-bottom: 20px;
 }
@@ -94,7 +93,6 @@ h1 {
 
 h2 {
     font-size: 1.5em;
-    margin-bottom: 15px;
 }
 
 h3 {
@@ -107,14 +105,9 @@ ul {
     padding-left: 0;
 }
 
-ul li:before {
-    content: "";
-}
-
 /* ----------------------------------------------------
-         * HEADER & NAVIGATION (STICKY)
-         * ----------------------------------------------------
-         */
+ * 3. HEADER & NAVIGATION
+ * ---------------------------------------------------- */
 header {
     background-color: var(--header-bg);
     color: var(--header-text);
@@ -138,7 +131,6 @@ nav a {
     color: var(--header-text);
     text-decoration: none;
     margin-left: 15px;
-    font-weight: 400;
     transition: color 0.3s;
 }
 
@@ -148,9 +140,8 @@ nav a:hover {
 }
 
 /* ----------------------------------------------------
-         * BOUTONS GÉNÉRAUX (THÈME, CODE, PDF)
-         * ----------------------------------------------------
-         */
+ * 4. BOUTONS & LIENS
+ * ---------------------------------------------------- */
 .toggle-btn {
     padding: 8px 15px;
     border: 1px solid var(--border-color);
@@ -159,16 +150,14 @@ nav a:hover {
     background-color: var(--secondary-bg);
     color: var(--text-color);
     font-weight: 700;
-    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
-    box-shadow: none;
     display: flex;
     align-items: center;
+    transition: 0.3s;
 }
 
 .toggle-btn:hover {
     background-color: var(--border-color);
     border-color: var(--primary-color);
-    color: var(--text-color);
 }
 
 header .toggle-btn {
@@ -181,10 +170,8 @@ header .toggle-btn {
 header .toggle-btn:hover {
     background-color: var(--header-text);
     color: var(--header-bg);
-    border-color: var(--header-text);
 }
 
-/* Style spécifique pour le bouton PDF dans le header */
 #print-pdf-btn {
     background-color: var(--primary-color);
     color: var(--header-text);
@@ -192,72 +179,7 @@ header .toggle-btn:hover {
 }
 
 #print-pdf-btn:hover {
-    background-color: var(--primary-color);
-    color: var(--header-text);
     filter: brightness(1.2);
-}
-
-body.soft-dark #print-pdf-btn {
-    color: #24292e;
-}
-
-body.soft-dark #print-pdf-btn:hover {
-    color: #24292e;
-}
-
-.toggle-btn i {
-    margin-right: 5px;
-}
-
-/* Styles spécifiques aux boutons de code */
-.code-item .toggle-btn {
-    margin-top: 10px;
-    width: 100%;
-    margin-left: 0;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-/* ----------------------------------------------------
-         * SECTIONS GÉNÉRALES (GRID)
-         * ----------------------------------------------------
-         */
-.grid-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.grid-item {
-    flex: 1 1 calc(33% - 20px);
-    background-color: var(--secondary-bg);
-    padding: 20px;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    box-shadow: 0 1px 3px var(--shadow-color);
-    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-}
-
-.grid-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px var(--shadow-color);
-    border-color: var(--primary-color);
-}
-
-.grid-item--half {
-    flex: 1 1 45%;
-}
-
-/* ----------------------------------------------------
-         * LIENS DE CONTACT (ABOUT ME & GRILLE)
-         * ----------------------------------------------------
-         */
-.contact-links-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 30px;
 }
 
 .contact-link {
@@ -267,20 +189,14 @@ body.soft-dark #print-pdf-btn:hover {
     padding: 8px 15px;
     border-radius: 6px;
     font-weight: 700;
-    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    transition: 0.3s;
 }
 
-.grid-item .contact-link {
-    margin-top: 10px;
-    margin-right: 10px;
-}
-
-.contact-link i {
+.contact-link i,
+.toggle-btn i {
     margin-right: 8px;
-    font-size: 1.1em;
 }
 
-/* Liens secondaires (Email, Social) */
 .email-link,
 .social-link {
     background-color: var(--secondary-bg);
@@ -302,24 +218,53 @@ body.soft-dark #print-pdf-btn:hover {
     border: 1px solid var(--primary-color);
 }
 
-body.soft-dark .cv-link {
-    color: #24292e;
-}
-
 .cv-link:hover {
-    background-color: var(--primary-color);
     filter: brightness(1.2);
-    color: var(--header-text);
-}
-
-body.soft-dark .contact-link:hover {
-    color: #24292e;
 }
 
 /* ----------------------------------------------------
-         * MISE EN AVANT ALGORITHMIQUE (BADGES)
-         * ----------------------------------------------------
-         */
+ * 5. GRILLES ET CONTENUS
+ * ---------------------------------------------------- */
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.grid-item {
+    flex: 1 1 calc(33% - 20px);
+    background-color: var(--secondary-bg);
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-shadow: 0 1px 3px var(--shadow-color);
+    transition: 0.2s;
+}
+
+.grid-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px var(--shadow-color);
+    border-color: var(--primary-color);
+}
+
+.grid-item--half {
+    flex: 1 1 45%;
+}
+
+.link-group-spacing {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.contact-links-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* Badges */
 .algo-badges {
     display: flex;
     gap: 10px;
@@ -328,15 +273,11 @@ body.soft-dark .contact-link:hover {
 }
 
 .badge {
-    background-color: transparent;
-    color: var(--text-color);
     border: 1px solid var(--border-color);
     padding: 6px 12px;
     border-radius: 20px;
-    font-size: 1em;
     font-weight: 700;
-    text-transform: none;
-    transition: border-color 0.3s, background-color 0.3s;
+    transition: 0.3s;
 }
 
 .badge:hover {
@@ -344,16 +285,11 @@ body.soft-dark .contact-link:hover {
     border-color: var(--primary-color);
 }
 
-/* ----------------------------------------------------
-         * STYLES GRILLE DE CODE
-         * ----------------------------------------------------
-         */
+/* Code */
 .code-grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    justify-content: center;
-    align-items: stretch;
     margin-top: 30px;
 }
 
@@ -367,32 +303,78 @@ body.soft-dark .contact-link:hover {
     padding: 15px;
     border-radius: 6px;
     overflow-x: auto;
-    font-size: 0.9em;
     border: 1px solid var(--border-color);
-    margin-top: 5px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     min-height: 250px;
-    height: auto;
     flex-grow: 1;
 }
 
 .code-block pre {
     margin: 0;
     white-space: pre-wrap;
-    word-wrap: break-word;
-    font-family: var(--font-code);
     color: var(--header-text);
 }
 
-.code-block code {
-    word-break: break-all;
-    word-wrap: break-word;
+.code-item .toggle-btn {
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
 }
 
 /* ----------------------------------------------------
-         * NAVIGATION RAPIDE (Scroll-to-Top/Bottom)
-         * ----------------------------------------------------
-         */
+ * 6. TABLEAUX ET ASSETS
+ * ---------------------------------------------------- */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid rgb(140, 140, 140);
+    font-size: 1rem;
+}
+
+thead,
+tfoot {
+    color: var(--heading-color);
+}
+
+tbody {
+    background-color: #e4f0f5;
+    color: #000000;
+}
+
+th,
+td {
+    border: 1px solid rgb(160, 160, 160);
+    padding: 8px 10px;
+    text-align: center;
+}
+
+tfoot th {
+    text-align: right;
+}
+
+tfoot td {
+    font-weight: bold;
+}
+
+.codewars-badge {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto 0 0;
+}
+
+/* ----------------------------------------------------
+ * 7. NAVIGATION RAPIDE & ICONES
+ * ---------------------------------------------------- */
 #scroll-to-top-bottom {
     position: fixed;
     bottom: 20px;
@@ -404,35 +386,20 @@ body.soft-dark .contact-link:hover {
 }
 
 #scroll-to-top-bottom button {
-    padding: 10px 12px;
-    border-radius: 50%;
     width: 40px;
     height: 40px;
-    display: flex;
+    border-radius: 50%;
     justify-content: center;
-    align-items: center;
-
     background-color: var(--primary-color);
-    border-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
     color: var(--header-text);
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
+    transition: 0.3s;
 }
-
-body.soft-dark #scroll-to-top-bottom button {
-    color: #24292e;
-}
-
 
 #scroll-to-top-bottom button i {
     margin-right: 0;
-}
-
-#scroll-to-top-bottom button:hover {
-    transform: scale(1.1);
-    background-color: var(--text-color);
-    border-color: var(--text-color);
 }
 
 .show-scroll-btn {
@@ -440,49 +407,7 @@ body.soft-dark #scroll-to-top-bottom button {
     visibility: visible !important;
 }
 
-.link-group-spacing {
-    margin-top: 15px;
-    margin-bottom: 20px;
-}
-
-.codewars-badge {
-    width: 75%;
-    display: inline-block;
-    margin-top: 10px;
-    margin-left: 0;
-    margin-right: 0;
-}
-
-/* ----------------------------------------------------
-         * FOOTER
-         * ----------------------------------------------------
-         */
-footer {
-    text-align: center;
-    padding: 20px 5%;
-    background-color: var(--secondary-bg);
-    color: var(--text-color);
-    border-top: 1px solid var(--border-color);
-}
-
-/* ----------------------------------------------------
-         * COULEURS D'ICÔNES DE LANGAGE
-         * ----------------------------------------------------
-         */
-.grid-item i.fa-brands,
-.grid-item i.fa-solid {
-    margin-right: 0;
-    transition: color 0.3s;
-}
-
-.grid-item ul li i,
-#passions ul li i {
-    margin-right: 5px;
-    width: 15px;
-    text-align: center;
-}
-
-
+/* Couleurs Icônes */
 .fa-html5 {
     color: #E44D26;
 }
@@ -523,13 +448,17 @@ body.soft-dark .fa-symfony {
     color: #adbac7;
 }
 
-/* ----------------------------------------------------
-         * RESPONSIVITÉ
-         * ----------------------------------------------------
-         */
-@media (max-width: 1200px) {
+footer {
+    text-align: center;
+    padding: 20px 5%;
+    background-color: var(--secondary-bg);
+    border-top: 1px solid var(--border-color);
+}
 
-    /* De 1200px à 600px, on passe à 2 colonnes pour le code */
+/* ----------------------------------------------------
+ * 8. RESPONSIVITÉ
+ * ---------------------------------------------------- */
+@media (max-width: 1200px) {
     .code-grid-container {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -542,8 +471,6 @@ body.soft-dark .fa-symfony {
 }
 
 @media (max-width: 600px) {
-
-    /* En dessous de 600px, on passe à 1 colonne */
     .code-grid-container {
         grid-template-columns: 1fr;
     }
@@ -554,7 +481,6 @@ body.soft-dark .fa-symfony {
 
     header {
         flex-direction: column;
-        align-items: center;
         text-align: center;
         padding: 15px 5%;
     }
@@ -572,23 +498,19 @@ body.soft-dark .fa-symfony {
 
     nav a,
     .toggle-btn {
-        margin-left: 5px;
-        margin-right: 5px;
+        margin: 0 5px;
     }
 
-    /* Pour les liens de contact */
     .contact-links-grid {
         flex-direction: column;
     }
 }
 
 /* ----------------------------------------------------
-         * STYLES D'IMPRESSION (PDF)
-         * ----------------------------------------------------
-         */
+ * 9. IMPRESSION
+ * ---------------------------------------------------- */
 @media print {
 
-    /* --- FORCE LIGHT THEME --- */
     body,
     body.soft-dark,
     body.color-blind-mode {
@@ -596,12 +518,10 @@ body.soft-dark .fa-symfony {
         --text-color: #000000 !important;
         --secondary-bg: #f0f0f0 !important;
         --heading-color: #0366d6 !important;
-        --border-color: #cccccc !important;
         background-color: #ffffff !important;
         color: #000000 !important;
     }
 
-    /* --- HIDE UI ELEMENTS --- */
     header,
     #scroll-to-top-bottom,
     .toggle-btn,
@@ -611,112 +531,81 @@ body.soft-dark .fa-symfony {
         display: none !important;
     }
 
-    /* --- REFORMAT CONTENT --- */
-    main {
-        padding-top: 0 !important;
-    }
-
     section {
         padding: 10px 0 !important;
-        margin: 20px 0;
         border: none !important;
-        /* Disable scroll margin */
-        scroll-margin-top: 0 !important;
-    }
-
-    main section:first-of-type {
-        padding-top: 0 !important;
     }
 
     .grid-container {
         display: block;
-        gap: 0;
-        margin-top: 5px;
     }
 
     .grid-item {
-        background-color: var(--secondary-bg) !important;
-        box-shadow: none !important;
-        border: 1px solid var(--border-color) !important;
+        background-color: #f0f0f0 !important;
         page-break-inside: avoid;
         margin-bottom: 10px;
-        flex: none;
-    }
-
-    .grid-item--half {
-        flex: none;
-    }
-
-    .code-grid-container {
-        display: block;
-    }
-
-    .code-item {
-        margin-bottom: 15px;
     }
 
     .contact-link {
         background-color: transparent !important;
-        color: #000000 !important;
-        border: 1px solid #000000 !important;
-        box-shadow: none !important;
+        color: #000 !important;
+        border: 1px solid #000 !important;
         padding: 4px 8px;
     }
 
     .cv-link {
-        background-color: var(--secondary-bg) !important;
+        background-color: #f0f0f0 !important;
     }
 
     .code-block {
-        background-color: #ffffff !important;
-        color: #000000 !important;
-        border: 1px dashed #cccccc !important;
-        box-shadow: none !important;
+        background-color: #fff !important;
+        color: #000 !important;
+        border: 1px dashed #ccc !important;
         min-height: auto !important;
     }
 
     .code-block pre,
-    .code-block code {
-        color: #000000 !important;
-        white-space: pre-wrap;
-        word-wrap: break-word;
-    }
-
+    .code-block code,
     i.fa-solid,
     i.fa-brands {
-        color: #000000 !important;
+        color: #000 !important;
     }
 }
 
-table {
-    border-collapse: collapse;
-    border: 2px solid rgb(140 140 140);
-    font-family: var(--font-code);
-    font-size: 1rem;
-    letter-spacing: 1px;
+/* --- Dans la section body.color-blind-mode --- */
+body.color-blind-mode {
+    --bg-color: #333333;
+    --text-color: #ffff00;
+    --primary-color: #00cccc;
+    --secondary-bg: #444444;
+    --shadow-color: rgba(0, 204, 204, 0.3);
+    --border-color: #555555;
+    --header-bg: #444444;
+    --header-text: #ffff00;
+    --heading-color: var(--primary-color);
 }
 
-thead,
-tfoot {
-    color: var(--heading-color);
+/* Ajoute ces règles juste en dessous pour forcer le tableau et les boutons */
+body.color-blind-mode tbody {
+    background-color: #444444 !important;
+    /* On enlève le bleu clair */
+    color: #ffff00 !important;
+    /* Texte jaune fluo pour contraste */
 }
 
-tbody {
-    background-color: #e4f0f5;
-    color: #000000;
+body.color-blind-mode th,
+body.color-blind-mode td {
+    border-color: #ffff00 !important;
+    /* Bordures plus visibles */
 }
 
-th,
-td {
-    border: 1px solid rgb(160 160 160);
-    padding: 8px 10px;
-    text-align: center;
+body.color-blind-mode .cv-link {
+    background-color: var(--primary-color) !important;
+    color: #000000 !important;
+    /* Texte noir sur fond cyan pour le contraste */
 }
 
-tfoot th {
-    text-align: right;
-}
-
-tfoot td {
-    font-weight: bold;
+body.color-blind-mode .codewars-badge {
+    filter: contrast(120%) brightness(90%);
+    /* Améliore la lisibilité de l'image externe */
 }
