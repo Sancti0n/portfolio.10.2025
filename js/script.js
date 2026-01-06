@@ -318,6 +318,7 @@ document.addEventListener('DOMContentLoaded', () => {
             sumValues += dict[key]["number"];
         }
 
+        document.getElementById("test_api").innerHTML = ""
         for (const p in sortedObject) {
             document.getElementById("test_api").innerHTML +=
                 `<tr>
