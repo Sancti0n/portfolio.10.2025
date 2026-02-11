@@ -255,21 +255,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    /*
-    // Récupération sur l'API de Codewars
-    const file = "https://www.codewars.com/api/v1/users/Sancti0n"
-    fetch(file)
-        .then(x => x.json())
-        .then(y =>
-            document.getElementById("api_codewars").innerHTML = "Python : " +
-            y.ranks.languages.python.name + "<br>JavaScript : " +
-            y.ranks.languages.javascript.name + "<br>PHP : " +
-            y.ranks.languages.php.name + "<br>Java : " +
-            y.ranks.languages.java.name + "<br>" +
-            y.codeChallenges.totalCompleted + " algorithmes terminés"
-        );
-    */
-
     let dict = {}
     let urlRanks = "https://www.codewars.com/api/v1/users/Sancti0n";
     var totalItems = 0;
@@ -301,15 +286,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         for (a in dict) {
-            //console.log(a, dict[a], d[a])
             dict[a]["number"] = d[a];
         }
-        /*
-        console.log("TEST FUSION")
-        console.log(dict)
-        console.log(totalItems)
-        console.log(c)
-        */
+
         let sortedObject = Object.fromEntries(
             Object.entries(dict).sort(([, a], [, b]) => b.number - a.number)
         );
@@ -337,7 +316,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td>${totalItems}</td>
             </tr>`
     }
-    // https://hashnode.com/post/build-a-simple-pie-chart-with-html-and-css-ckscytmme04qnt2s1fq649khl
     afficherKatas();
 
     // --- ÉVÉNEMENTS ET CHARGEMENT INITIAL ---
