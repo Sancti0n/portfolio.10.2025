@@ -264,6 +264,14 @@ header .toggle-btn:hover {
     margin-top: 30px;
 }
 
+.github-chart-container img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    margin-top: 30px;
+}
+
 /* Badges */
 .algo-badges {
     display: flex;
