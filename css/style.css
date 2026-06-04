@@ -268,8 +268,8 @@ header .toggle-btn:hover {
     width: 100%;
     max-width: 800px;
     height: auto;
-    display: block;
     margin-top: 30px;
+    border-radius: 5px;
 }
 
 /* Badges */
