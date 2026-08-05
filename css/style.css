@@ -50,6 +50,26 @@ body.color-blind-mode {
     --heading-color: var(--primary-color);
 }
 
+/* Ajustements pour le mode Daltonien */
+body.color-blind-mode tbody {
+    background-color: #444444 !important;
+    color: #ffff00 !important;
+}
+
+body.color-blind-mode th,
+body.color-blind-mode td {
+    border-color: #ffff00 !important;
+}
+
+body.color-blind-mode .cv-link {
+    background-color: var(--primary-color) !important;
+    color: #000000 !important;
+}
+
+body.color-blind-mode .codewars-badge {
+    filter: contrast(120%) brightness(90%);
+}
+
 /* ----------------------------------------------------
  * 2. BASE & TYPOGRAPHIE
  * ---------------------------------------------------- */
@@ -264,12 +284,19 @@ header .toggle-btn:hover {
     margin-top: 30px;
 }
 
-.github-chart-container img {
+/* --- Graphique GitHub --- */
+.github-chart-container img,
+.github-chart-img {
     width: 100%;
     max-width: 800px;
     height: auto;
     margin-top: 30px;
-    border-radius: 5px;
+    border-radius: 6px;
+    padding: 10px;
+    background-color: #ffffff;
+    /* Assure le fond clair sur TOUS les thèmes */
+    border: 1px solid var(--border-color);
+    box-sizing: border-box;
 }
 
 /* Badges */
@@ -308,7 +335,6 @@ header .toggle-btn:hover {
 
 .code-block {
     background-color: var(--header-bg);
-    /*padding: 15px;*/
     border-radius: 6px;
     overflow-x: auto;
     border: 1px solid var(--border-color);
@@ -578,42 +604,4 @@ footer {
     i.fa-brands {
         color: #000 !important;
     }
-}
-
-/* --- Dans la section body.color-blind-mode --- */
-body.color-blind-mode {
-    --bg-color: #333333;
-    --text-color: #ffff00;
-    --primary-color: #00cccc;
-    --secondary-bg: #444444;
-    --shadow-color: rgba(0, 204, 204, 0.3);
-    --border-color: #555555;
-    --header-bg: #444444;
-    --header-text: #ffff00;
-    --heading-color: var(--primary-color);
-}
-
-/* Ajoute ces règles juste en dessous pour forcer le tableau et les boutons */
-body.color-blind-mode tbody {
-    background-color: #444444 !important;
-    /* On enlève le bleu clair */
-    color: #ffff00 !important;
-    /* Texte jaune fluo pour contraste */
-}
-
-body.color-blind-mode th,
-body.color-blind-mode td {
-    border-color: #ffff00 !important;
-    /* Bordures plus visibles */
-}
-
-body.color-blind-mode .cv-link {
-    background-color: var(--primary-color) !important;
-    color: #000000 !important;
-    /* Texte noir sur fond cyan pour le contraste */
-}
-
-body.color-blind-mode .codewars-badge {
-    filter: contrast(120%) brightness(90%);
-    /* Améliore la lisibilité de l'image externe */
 }
